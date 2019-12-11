@@ -13,7 +13,7 @@ ssh -i 3decmuditcodeinit2019.pem ubuntu@<18.189.153.131>
 Add the repository :
 sudo add-apt-repository ppa:ondrej/php
 
-Update : 
+Update :
 sudo apt-get update
 
 Install 7.1:
@@ -34,7 +34,7 @@ sudo curl -O https://getcomposer.org/composer.phar
 
 sudo mv composer.phar composer
 
-sudo chmod +x composer 
+sudo chmod +x composer
 
 sudo mv composer /usr/local/bin
 
@@ -52,11 +52,11 @@ composer create-project --prefer-dist laravel/laravel blog "5.8.*"
 <strong>Install Java-8 on AWS </strong>
 
       As root, go to this folder: /etc/apt/sources.list.d
-      
-      Locate this file: webupd8team-java.list and delete it.
-      
 
-sudo apt-get update 
+      Locate this file: webupd8team-java.list and delete it.
+
+
+sudo apt-get update
 
 sudo add-apt-repository ppa:webupd8team/java  
 
@@ -71,7 +71,7 @@ sudo apt install oracle-java8-set default
 
 <strong>Install Jenkines on AWS </strong>
 
-sudo su 
+sudo su
 
 sudo  apt-get  update
 
@@ -95,4 +95,4 @@ sudo nano /etc/sudoers
 jenkins ALL=(ALL) NOPASSWD: ALL
 
 
-/bin/sh /usr/local/bin/jenkins/jenkins-laravel.sh blog "${GIT_BRANCH}"
+/bin/sh /usr/local/bin/jenkins/jenkins-laravel.sh blog "${GIT_BRANCH}" 
