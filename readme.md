@@ -96,4 +96,4 @@ jenkins ALL=(ALL) NOPASSWD: ALL
 
 /bin/sh /usr/local/bin/jenkins/jenkins-laravel.sh blog "${GIT_BRANCH}"
 mssd dd
-f
+fdd
