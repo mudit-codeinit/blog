@@ -20,7 +20,7 @@
      <div class="collapse navbar-collapse" id="collapsibleNavbar">
      <ul class="navbar-nav">
        <li class="nav-item">
-       <a class="nav-link active" href="#">Homess</a>
+       <a class="nav-link active" href="#">Homessccccc</a>
        </li>
        <li class="nav-item">
        <a class="nav-link" href="#">Who Is Elissa? </a>
