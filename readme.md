@@ -42,7 +42,7 @@ composer
 
 <strong>Install Laravel on aws Cammands</strong>
 
-cd /var/www/
+cd /var/www/y
 
 composer global require laravel/installer
 
