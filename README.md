@@ -95,5 +95,7 @@ sudo nano /etc/sudoers
 jenkins ALL=(ALL) NOPASSWD: ALL
 
 /bin/sh /usr/local/bin/jenkins/jenkins-laravel.sh blog "${GIT_BRANCH}"
-mssd dd
-fdd
+
+https://www.thesunflowerlab.com/blog/jenkins-aws-ec2-instance-ssh/
+
+https://medium.com/faun/use-jenkins-to-run-scripts-in-aws-ec2-1f3d1307263a
