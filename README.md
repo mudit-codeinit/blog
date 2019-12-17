@@ -99,3 +99,16 @@ jenkins ALL=(ALL) NOPASSWD: ALL
 https://www.thesunflowerlab.com/blog/jenkins-aws-ec2-instance-ssh/
 
 https://medium.com/faun/use-jenkins-to-run-scripts-in-aws-ec2-1f3d1307263a
+
+
+<strong>Install Node and Npm</strong>
+https://www.npmjs.com/get-npm
+
+check Version
+node -v
+npm -v
+latest npm
+npm install npm@latest -g
+
+<strong>Install Angular</strong>
+ npm install -g @angular/cli
