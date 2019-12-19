@@ -15,19 +15,19 @@ aria-label="Toggle Navigation">
 <li class="nav-item">
   <a routerLink="/" class="nav-link">Home</a>
 </li>
-<li *ngIf="!auth.isLoggedIn()" class="nav-item">
+<li *ngIf="!auth.isLoggedin()" class="nav-item">
   <a routerLink="/login" class="nav-link">Login</a>
 </li>
 
-<li *ngIf="!auth.isLoggedIn()" class="nav-item">
+<li *ngIf="!auth.isLoggedin()" class="nav-item">
     <a routerLink="/register" class="nav-link">Register</a>
 </li>
 
-<li *ngIf="auth.isLoggedIn()" class="nav-item">
+<li *ngIf="auth.isLoggedin()" class="nav-item">
   <a routerLink="/profile" class="nav-link">Profile</a>
 </li>
 
-<li *ngIf="auth.isLoggedIn()" class="nav-item">
+<li *ngIf="auth.isLoggedin()" class="nav-item">
   <a routerLink="" (click)="auth.logout()" class="nav-link">Logout</a>
 </li>
 </ul>
