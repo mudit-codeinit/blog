@@ -19,7 +19,7 @@ export class RegisterComponent {
 
 constructor(private auth: AuthenticationService, private router: Router){}
 
-  login(){
+register(){
         this.auth.register(this.credentials).subscribe(
           ()=> {
             this.router.navigateByUrl('/login')
