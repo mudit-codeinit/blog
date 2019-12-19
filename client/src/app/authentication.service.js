@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core'
 import {HttpClient} from '@angular/common/http'
 import {Observable , of} from 'rxjs'
-import {Map , of} from 'rxjs/operators'
-import {Router , of} from '@angular/router'
+import {Map } from 'rxjs/operators'
+import {Router } from '@angular/router'
 
 
 export interface UserDetails  {
@@ -25,7 +25,7 @@ export interface TokenPayload{
   password: string
 }
 
-@Injectable
+@Injectable()
 export  class AuthenticationService{
   private token: string
 
@@ -100,7 +100,7 @@ public profile(user: TokenPayload ): Observable<any>  {
 }
 
 public logout (): void{
-  this.token=''
+  this.token = ''
   window.localStorage.removeItem('usertkoen')
   this.router.navigateByUrl('/')
 }

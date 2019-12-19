@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core'
-import {AuthenticationService , UserDetails} from './authentication-service'
+import {Component} from '@angular/core'
+import {AuthenticationService , UserDetails} from '../authentication-service'
 @Component({
 
   templateUrl: './profile.component.html'

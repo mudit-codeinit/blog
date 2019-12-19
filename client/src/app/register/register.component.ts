@@ -1,11 +1,13 @@
-import {Injectable} from '@angular/core'
+import {Component} from '@angular/core'
 import {Router} from '@angular/router'
-import {AuthenticationService , TokenPayload} from './authentication-service'
+import {AuthenticationService , TokenPayload} from '../authentication-service'
+
+
 @Component({
-
   templateUrl: './register.component.html'
-
 })
+
+
 export class RegisterComponent {
 
   credentials: TokenPayload = {
