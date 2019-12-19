@@ -78,7 +78,7 @@ public login(user: TokenPayload ): Observable<any>  {
               '/api/login' ,
               {email: user.email , password: user.password} ,
                 {headers: {'Content-Type': 'application/json'}
-  }
+            }
         )
   
   const request = base.pipe(
