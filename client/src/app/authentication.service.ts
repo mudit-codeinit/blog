@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core'
 import {HttpClient} from '@angular/common/http'
 import {Observable , of} from 'rxjs'
-import {Map } from 'rxjs/operators'
+import {map} from 'rxjs/operators'
 import {Router } from '@angular/router'
 
 
@@ -30,7 +30,7 @@ export  class AuthenticationService{
   private token: string
 
 constructor(private http: HttpClient, private router: Router){}
-  private saveToken(token: String): void {
+  private saveToken(token: string): void {
     localStorage.setItem('usertkoen', token)
     this.token = token
   }
@@ -48,7 +48,7 @@ public getUserDetails(): UserDetails{
   if(token){
     payload = token.split('.')[1]
     payload = window.atob(payload)
-    return JSON.prase(payload)
+    return JSON.parse(payload)
   }else{
     return null
   }
@@ -74,11 +74,13 @@ public register(user: TokenPayload ): Observable<any>  {
 
 public login(user: TokenPayload ): Observable<any>  {
 
-  const base =  this.http.post('/api/login' ,
-  {email: user.email , password: user.password} ,
-  {headers: {'Content-Type': 'application/json'}
-)
-  console.log(user)
+  const base =  this.http.post(
+              '/api/login' ,
+              {email: user.email , password: user.password} ,
+                {headers: {'Content-Type': 'application/json'}
+  }
+        )
+  
   const request = base.pipe(
     map((data: TokenResponse ) => {
       if(data.token){
@@ -92,7 +94,7 @@ public login(user: TokenPayload ): Observable<any>  {
 
 
 
-public profile(user: TokenPayload ): Observable<any>  {
+public profile(): Observable<any>  {
 
   return this.http.get('/api/profile' ,   {
     headers: {Authorization : 'Bearer ${this.getToken()}'}
