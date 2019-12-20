@@ -97,7 +97,7 @@ public login(user: TokenPayload ): Observable<any>  {
 public profile(): Observable<any>  {
 
   return this.http.get('/api/profile' ,   {
-    headers: {Authorization : 'Bearer ${this.getToken()}'}
+    headers: {Authorization : `Bearer ${this.getToken()}`}
   })
 }
 
