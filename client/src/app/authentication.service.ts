@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http'
 import {Observable , of} from 'rxjs'
 import {map} from 'rxjs/operators'
 import {Router } from '@angular/router'
-
+import { environment } from '../environments/environment'
 
 export interface UserDetails  {
   id: number
@@ -66,7 +66,7 @@ public isLoggedin(): boolean {
 
 public register(user: TokenPayload ): Observable<any>  {
   console.log(user)
-  return this.http.post('/api/register' , user , {
+  return this.http.post( environment.apiUrl+'/api/register' , user , {
     headers: {'Content-Type': 'application/json'}
   })
 }
@@ -75,12 +75,12 @@ public register(user: TokenPayload ): Observable<any>  {
 public login(user: TokenPayload ): Observable<any>  {
 
   const base =  this.http.post(
-              '/api/login' ,
+                  environment.apiUrl+'/api/login' ,
               {email: user.email , password: user.password} ,
                 {headers: {'Content-Type': 'application/json'}
             }
         )
-  
+
   const request = base.pipe(
     map((data: TokenResponse ) => {
       if(data.token){
@@ -96,7 +96,7 @@ public login(user: TokenPayload ): Observable<any>  {
 
 public profile(): Observable<any>  {
 
-  return this.http.get('/api/profile' ,   {
+  return this.http.get(environment.apiUrl+'/api/profile' ,   {
     headers: {Authorization : `Bearer ${this.getToken()}`}
   })
 }
