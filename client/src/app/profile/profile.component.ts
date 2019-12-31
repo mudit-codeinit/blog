@@ -11,8 +11,9 @@ export class ProfileComponent {
   constructor(private auth: AuthenticationService){}
 
   ngOnInit() {
+
       this.auth.profile().subscribe(
-        user => {
+        (user : any) => {
           this.details = user
         },
         err => {
