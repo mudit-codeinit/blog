@@ -31,13 +31,13 @@ export  class AuthenticationService{
 
 constructor(private http: HttpClient, private router: Router){}
   private saveToken(token: string): void {
-    localStorage.setItem('usertkoen', token)
+    localStorage.setItem('usertoken', token)
     this.token = token
   }
 
 private getToken(): string{
 if(!this.token){
-  this.token = localStorage.getItem('usertoken')
+   this.token = localStorage.getItem('usertoken')
   }
   return this.token
 }
