@@ -103,7 +103,7 @@ public profile(): Observable<any>  {
 
 public logout (): void{
   this.token = ''
-  window.localStorage.removeItem('usertkoen')
+  window.localStorage.removeItem('usertoken')
   this.router.navigateByUrl('/')
 }
 
