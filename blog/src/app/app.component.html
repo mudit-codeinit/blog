@@ -26,6 +26,9 @@ aria-label="Toggle Navigation">
 <li *ngIf="auth.isLoggedin()" class="nav-item">
   <a routerLink="/profile" class="nav-link">Profile</a>
 </li>
+<li *ngIf="auth.isLoggedin()" class="nav-item">
+  <a routerLink="/post" class="nav-link">Post</a>
+</li>
 
 <li *ngIf="auth.isLoggedin()" class="nav-item">
   <a routerLink="" (click)="auth.logout()" class="nav-link">Logout</a>
