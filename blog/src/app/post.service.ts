@@ -9,6 +9,11 @@ export interface PostDetails  {
   description: string
 
 }
+export interface PostPayload{
+  id: number
+  title: string
+  description: string
+}
 
 @Injectable({
   providedIn: 'root'
@@ -25,9 +30,15 @@ export class PostService {
       }
       return this.token
     }
-    
+
  public posts(): Observable<any>  {
   return this.http.get('/api/posts' ,   {
+    headers: {Authorization : `Bearer ${this.getToken()}`}
+  })
+}
+ public add_post(post: PostPayload ): Observable<any>  {
+   console.log(post)
+  return this.http.post('/api/add_post' ,  post, {
     headers: {Authorization : `Bearer ${this.getToken()}`}
   })
 }

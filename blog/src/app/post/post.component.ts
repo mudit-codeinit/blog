@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PostService , PostDetails} from '../post.service'
+import { PostService , PostDetails , PostPayload} from '../post.service'
 
 @Component({
   selector: 'app-post',
@@ -8,12 +8,23 @@ import { PostService , PostDetails} from '../post.service'
 })
 
 export class PostComponent  {
+
   posts: PostDetails
 
+  post_payload: PostPayload = {
+      id: 0,
+      title: "",
+      description: ""
+
+  }
   constructor( private post: PostService){}
 
   ngOnInit() {
+    this.get_posts()
 
+  }
+
+  get_posts(){
     this.post.posts().subscribe(
       (post_data : any) => {
         this.posts = post_data.posts
@@ -23,5 +34,18 @@ export class PostComponent  {
       }
     )
   }
+
+
+  add_post(){
+          this.post.add_post(this.post_payload).subscribe(
+            (post_data : any) => {
+              this.posts = post_data.posts
+            },
+            err => {
+              console.error(err)
+            }
+          )
+    }
+
 
 }
