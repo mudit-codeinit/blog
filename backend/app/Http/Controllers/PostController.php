@@ -77,6 +77,43 @@ class PostController extends Controller
            return response()->json(['token_absent'], $e->getStatusCode());
        }
  }
+ public function get_post(Request $request)
+   {
+     try {
+           if (! $user = JWTAuth::parseToken()->authenticate()) {
+               return response()->json(['user_not_found'], 404);
+           }else{
+            $posts = DB::table('posts')->where('id', $request->id)->first();
+		//	$posts = DB::table('posts')->get();
+            return response()->json(compact('posts'));
+           }
+       } catch (Tymon\JWTAuth\Exceptions\TokenExpiredException $e) {
+           return response()->json(['token_expired'], $e->getStatusCode());
+       } catch (Tymon\JWTAuth\Exceptions\TokenInvalidException $e) {
+           return response()->json(['token_invalid'], $e->getStatusCode());
+       } catch (Tymon\JWTAuth\Exceptions\JWTException $e) {
+           return response()->json(['token_absent'], $e->getStatusCode());
+       }
+ } public function edit_post(Request $request)
+   {
+     try {
+           if (! $user = JWTAuth::parseToken()->authenticate()) {
+               return response()->json(['user_not_found'], 404);
+           }else{
+			  $c_post = DB::table('posts')
+            ->where('id', $request->id)
+            ->update(['title' => $request->title , 'description' => $request->description , 'is_active' => 1 ]);
+			$posts = DB::table('posts')->get();
+            return response()->json(compact('posts'));
+           }
+       } catch (Tymon\JWTAuth\Exceptions\TokenExpiredException $e) {
+           return response()->json(['token_expired'], $e->getStatusCode());
+       } catch (Tymon\JWTAuth\Exceptions\TokenInvalidException $e) {
+           return response()->json(['token_invalid'], $e->getStatusCode());
+       } catch (Tymon\JWTAuth\Exceptions\JWTException $e) {
+           return response()->json(['token_absent'], $e->getStatusCode());
+       }
+ }
 
 
 

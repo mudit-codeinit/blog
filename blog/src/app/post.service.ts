@@ -37,14 +37,26 @@ export class PostService {
   })
 }
  public add_post(post: PostPayload ): Observable<any>  {
-   console.log(post)
+   if(post.id){
+	    return this.http.post('/api/edit_post/'+post.id ,  post, {
+    headers: {Authorization : `Bearer ${this.getToken()}`}
+  });
+   }else{
   return this.http.post('/api/add_post' ,  post, {
     headers: {Authorization : `Bearer ${this.getToken()}`}
-  })
+  });
+   }
 }
 public delete_post(post: id ): Observable<any>  {
    console.log(post)
-  return this.http.post('/api/delete_post/'+post ,  post, {
+  return this.http.post('/api/delete_post/'+post , {
+    headers: {Authorization : `Bearer ${this.getToken()}`}
+  })
+}
+
+public get_post(post: id ): Observable<any>  {
+   //console.log(post)
+  return this.http.post('/api/get_post/'+post, post, {
     headers: {Authorization : `Bearer ${this.getToken()}`}
   })
 }

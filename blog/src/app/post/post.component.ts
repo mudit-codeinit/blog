@@ -36,7 +36,7 @@ export class PostComponent  {
   }
 
 
-  add_post(){
+	add_post(){
           this.post.add_post(this.post_payload).subscribe(
             (post_data : any) => {
               this.posts = post_data.posts
@@ -47,10 +47,20 @@ export class PostComponent  {
           )
     }
 	
- delete_post(id){
+	delete_post(id){
           this.post.delete_post(id).subscribe(
             (post_data : any) => {
               this.posts = post_data.posts
+            },
+            err => {
+              console.error(err)
+            }
+          )
+    } 
+	get_post(id){
+          this.post.get_post(id).subscribe(
+            (post_data : any) => {
+              this.post_payload = post_data.posts
             },
             err => {
               console.error(err)

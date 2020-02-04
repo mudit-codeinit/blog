@@ -18,6 +18,8 @@ Route::get('profile', 'UserController@getAuthenticatedUser');
 Route::get('posts', 'PostController@index');
 Route::post('add_post', 'PostController@add_post');
 Route::post('delete_post/{id}', 'PostController@delete_post');
+Route::post('get_post/{id}', 'PostController@get_post');
+Route::post('edit_post/{id}', 'PostController@edit_post');
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
