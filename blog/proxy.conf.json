@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "http://backend_blog.loc/api",
+    "target": "http://blog_backend.loc/api",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin":true,

@@ -46,6 +46,15 @@ export class PostComponent  {
             }
           )
     }
-
-
+	
+ delete_post(id){
+          this.post.delete_post(id).subscribe(
+            (post_data : any) => {
+              this.posts = post_data.posts
+            },
+            err => {
+              console.error(err)
+            }
+          )
+    }
 }

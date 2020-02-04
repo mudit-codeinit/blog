@@ -42,5 +42,11 @@ export class PostService {
     headers: {Authorization : `Bearer ${this.getToken()}`}
   })
 }
+public delete_post(post: id ): Observable<any>  {
+   console.log(post)
+  return this.http.post('/api/delete_post/'+post ,  post, {
+    headers: {Authorization : `Bearer ${this.getToken()}`}
+  })
+}
 
 }

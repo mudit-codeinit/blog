@@ -17,6 +17,7 @@ Route::post('login', 'UserController@login');
 Route::get('profile', 'UserController@getAuthenticatedUser');
 Route::get('posts', 'PostController@index');
 Route::post('add_post', 'PostController@add_post');
+Route::post('delete_post/{id}', 'PostController@delete_post');
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
