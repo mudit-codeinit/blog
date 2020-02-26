@@ -23,7 +23,7 @@
        <a class="nav-link active" href="#">Home</a>
        </li>
        <li class="nav-item">
-       <a class="nav-link" href="#">About ss</a>
+       <a class="nav-link" href="#">About</a>
        </li>
        <li class="nav-item">
        <a class="nav-link" href="#">Blog of the Angels</a>
